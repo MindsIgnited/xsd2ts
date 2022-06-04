@@ -60,7 +60,7 @@ function generateTemplateClassesFromXSD(xsdFilePath, dependencies, xmlnsName) {
     }
     var classFileDef = generator.generateClassFileDefinition(xsdString, 's');
     //add classes in order of hierarchy depth to make the compiler happy
-    var disclaimer = "/***********\ngenerated template classes for " + xsdFilePath + ' ' + new Date().toLocaleString() + "\n***********/\n\n";
+    var disclaimer = "/***********\ngenerated template classes for " + xsdFilePath + ' ' + new Date().toLocaleString() + "\n***********/\n// @ts-nocheck\n";
     var src = disclaimer + '\n\n\n\n' + classFileDef.write().replace(/protected\s/g, 'public ');
     fs.writeFileSync(genSrcPath + "/" + fileName, src, 'utf8');
     fs.writeFileSync(genSrcPath + "/index.ts", src, 'utf8');

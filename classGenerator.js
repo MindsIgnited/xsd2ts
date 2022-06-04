@@ -260,7 +260,8 @@ var ClassGenerator = /** @class */ (function () {
                 }
             }
             if (t.attr.element) {
-                schemaClass.addProperty({ name: lowfirst(t.name), type: capfirst(t.name) });
+                // schemaClass.addProperty({name: lowfirst(t.name), type: capfirst(t.name)});
+                schemaClass.addProperty({ name: t.name, type: capfirst(t.name) });
             }
         });
         fileDef.classes.push(schemaClass);
@@ -283,7 +284,8 @@ var ClassGenerator = /** @class */ (function () {
                 //     fileDef.classes = fileDef.classes.filter(x => x !== c);
                 //     log('rewrite for', t.name);
                 // } else {
-                schemaClass.addProperty({ name: lowfirst(t.name), type: capfirst(t.name) });
+                // schemaClass.addProperty({name: lowfirst(t.name), type: capfirst(t.name)});
+                schemaClass.addProperty({ name: t.name, type: capfirst(t.name) });
                 //log('no rewrite for', t.name);
                 //}
             }
@@ -294,7 +296,8 @@ var ClassGenerator = /** @class */ (function () {
             var enumDef = fileDef.addEnum({ name: xml_utils_1.capFirst(t.name) });
             t.attr.values.forEach(function (m) { enumDef.addMember({ name: m.attr.value.replace('+', '_'), value: "\"" + m.attr.value + "\"" }); });
             if (t.attr.element) {
-                schemaClass.addProperty({ name: lowfirst(t.name), type: capfirst(t.name) });
+                // schemaClass.addProperty({name: lowfirst(t.name), type: capfirst(t.name)});
+                schemaClass.addProperty({ name: t.name, type: capfirst(t.name) });
             }
         });
         var tmp = this.makeSortedFileDefinition(fileDef.classes, fileDef);

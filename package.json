@@ -34,7 +34,7 @@
     "istanbul": "1.1.0-alpha.1",
     "jasmine": "^3.5.0",
     "jasmine-core": "2.6.2",
-    "jasmine-ts": "0.2.0",
+    "jasmine-ts": "^0.4.0",
     "tslint": "^5.20.1"
   }
 }

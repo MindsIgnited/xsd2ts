@@ -180,6 +180,7 @@ export class ASTClass extends ASTNode {
         this.addName(n);
     }
 
+    // @ts-ignore
     get nodeType(){
         return 'Class;';
     }

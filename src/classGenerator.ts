@@ -305,7 +305,8 @@ export class ClassGenerator {
                     }
                 }
                 if (t.attr.element) {
-                    schemaClass.addProperty({name: lowfirst(t.name), type: capfirst(t.name)});
+                    // schemaClass.addProperty({name: lowfirst(t.name), type: capfirst(t.name)});
+                    schemaClass.addProperty({name: t.name, type: capfirst(t.name)});
                 }
 
             });
@@ -332,7 +333,8 @@ export class ClassGenerator {
                     //     fileDef.classes = fileDef.classes.filter(x => x !== c);
                     //     log('rewrite for', t.name);
                     // } else {
-                    schemaClass.addProperty({name: lowfirst(t.name), type: capfirst(t.name)});
+                    // schemaClass.addProperty({name: lowfirst(t.name), type: capfirst(t.name)});
+                    schemaClass.addProperty({name: t.name, type: capfirst(t.name)});
                     //log('no rewrite for', t.name);
                     //}
                 }
@@ -347,7 +349,8 @@ export class ClassGenerator {
                     (m) => { enumDef.addMember( {name: m.attr.value.replace('+', '_') , value: `"${m.attr.value}"` as any } ); },
                 );
                 if (t.attr.element) {
-                    schemaClass.addProperty({name: lowfirst(t.name), type: capfirst(t.name)});
+                    // schemaClass.addProperty({name: lowfirst(t.name), type: capfirst(t.name)});
+                    schemaClass.addProperty({name: t.name, type: capfirst(t.name)});
                 }
             });
 
