@@ -2,12 +2,12 @@
   "name": "xsd2ts",
   "version": "0.9.17",
   "description": "generates template classes for an xsd",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
     "test:jasmine": "ts-node  -r ./test/node-unittest-setup.js node_modules/jasmine/bin/jasmine.js JASMINE_CONFIG_PATH=jasmine.json",
     "test:j-debug": "ts-node $NODE_DEBUG_OPTION  ./test/node-unittest-setup.js node_modules/jasmine/bin/jasmine.js JASMINE_CONFIG_PATH=jasmine.json",
     "compile": "tsc -p ./src",
-    "compile-gen": "tsc -p ./src/generated --outDir ./compiled",
+    "compile-gen": "tsc -p ./src --outDir ./dist",
     "version": "npm version patch",
     "setup": "npm install",
     "deploy": "npm run compile && npm publish"
